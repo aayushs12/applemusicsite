@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Catalogue</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'applemusicsite2/css/styles.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet"  type="text/css" href="{% static 'applemusicsite2/css/spotify.css' %}">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="icon" type=="image/x-icon" href="{% static 'applemusicsite2/images/favicon.ico' %}">
+  </head>
+  <body>
+    <section class="colored-section" id="title" style="height: 100px;">
+
+      <div class="container-fluid">
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark" style="bottom: 25px;padding-bottom: 0px;">
+
+          <a class="navbar-brand" href="{% url 'index' %}">Apple Music</a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'features' %}">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cta">Download</a>
+              </li>
+            </ul>
+
+          </div>
+        </nav>
+        </section>
+    <main style=" background-color: #fed2c4;
+      color: #2d3332;">
+      </div>
+        <div class=" container-flex text-center">
+          {% if results %}
+          <div class="title plb-20">
+            <h1><strong style="padding-right: 0px;">Top songs by {{artistname}}</strong></h1><br />
+          </div>
+        </div>
+            <div class=" container-flex text-center">
+          {% for x in results %}
+          <div class="music-card">
+            <a href="{{x.preview_url}}"><img src="{{x.album.images.0.url}}" alt=""></a>
+            <audio controls>
+            <source src="{{x.preview_url}}">
+  Your browser does not support the audio element.
+</audio>
+            <p>{{x.name}}</p>
+          </div>
+          {% endfor %}
+           {% endif %}
+        </div>
+        <div class=" container-flex text-center">
+        {% if resultsalbum %}
+        <div class="title plb-20" style="text-align:left">
+          <h1><strong style="padding-right: 0px;">Top albums by {{artistname}}</strong></h1>
+        </div>
+      </div>
+        <div class=" container-flex text-center">
+        {% for x in resultsalbum %}
+        <div class="music-card">
+          <a href="{{x.preview_url}}"><img src="{{x.images.0.url}}" alt=""></a>
+          <p>{{x.name}}</p>
+        </div>
+        {% endfor %}
+         {% endif %}
+      </div>
+    </main>
+    <div class="" style="
+    background-color: #fed2c4;">
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group row" style="width: 80%;margin-top: 0px;padding-top: 50px;padding-left: 250px;">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg" style="font-family: montserrat;color: black;" >Artist:</label>
+        <div class="col-sm-10">
+          <input name="uri" type="" class="form-control form-control-lg" id="colFormLabelLg" style="font-family: montserrat;" placeholder="Artist Name" autocomplete="off">
+          <button type="submit" class="btn2" style="
+    margin-top: 30px;
+    margin-bottom: 30px;
+">submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <footer>
+      <div class="playmusic text-center">
+        <ul class="list-inline" style="display: -webkit-inline-box;">
+          <li style="
+    padding-right: 30px;
+"><a href="#"><i class="fas fa-random"></i></a></li>
+          <li style="
+    padding-right: 30px;
+"><a href="#"><i class="fas fa-step-backward"></i></i></a></li>
+          <li style="
+    padding-right: 30px;
+"><a href="#"><i class="far fa-play-circle"></i></a></li>
+          <li style="
+    padding-right: 30px;
+"><a href="#"><i class="fas fa-step-forward"></i></a></li>
+          <li style="
+    padding-right: 30px;
+"><a href="#"><i class="fas fa-redo"></i></a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

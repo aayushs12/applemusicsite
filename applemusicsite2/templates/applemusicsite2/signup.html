@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'applemusicsite2/css/styles.css' %}">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="icon" type=="image/x-icon" href="{% static 'applemusicsite2/images/favicon.ico' %}">
+  </head>
+  <body>
+    <section class="colored-section" id="title" style="height: 100px;">
+
+      <div class="container-fluid">
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark" style="bottom: 25px;">
+
+          <a class="navbar-brand" href="{% url 'index' %}">Apple Music</a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'features' %}">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cta">Download</a>
+              </li>
+            </ul>
+
+          </div>
+        </nav>
+        </section>
+        </div>
+        <section>
+          <div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+          <div class="container py-5 h-100">
+            <div class="row justify-content-center align-items-center h-100">
+              <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;height: 550px;">
+                  <div class="card-body p-4 p-md-5">
+<b><strong><h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="font-family: &quot;Montserrat&quot;;color: darkslategray;">REGISTER</h3></b></strong>
+                      <form method="POST">
+                        {% csrf_token %}
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+
+                          <div class="form-outline">
+                            <input type="text" id="firstName" name="firstName" class="form-control form-control-lg" placeholder="First Name" required>
+                          </div>
+
+                        </div>
+                        <div class="col-md-6 mb-4">
+
+                          <div class="form-outline">
+                            <input type="text" id="lastName"name="lastName" class="form-control form-control-lg" placeholder="Last Name" required>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                          <div class="form-outline datepicker w-100">
+                            <input type="tel" class="form-control form-control-lg" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required minlength="10" maxlength="10">
+                          </div>
+
+                        </div>
+                        <div class="col-md-6 mb-4">
+
+                          <div class="form-check form-check-inline" >
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                              value="Basic" checked>
+                            <label class="form-check-label" for="Basic">Basic</label>
+                          </div>
+
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                              value="Premium" />
+                            <label class="form-check-label" for="Premium">Premium</label>
+                          </div>
+
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
+                              value="Pro" />
+                            <label class="form-check-label" for="Pro">Pro</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-4 pb-2">
+
+                          <div class="form-outline">
+                            <input type="email" id="emailAddress" name="emailAddress" class="form-control form-control-lg" placeholder="Email" required>
+                          </div>
+
+                        </div>
+                        <div class="col-md-6 mb-4 pb-2">
+
+                          <div class="form-outline">
+                            <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Password" required>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="mt-4 pt-2" style="padding-bottom: 16px;">
+                        <input class="btn2" type="submit" value="Sign up">
+                      </div>
+                      <a href="{% url 'login' %}" style="color:darkslategray">Log In</a>
+                      <p style="padding-top:20px">
+                      {% if messages %}
+                      {% for result in messages %}
+                      {% if result.tags == 'success' %}
+                      <b style="color:green;font-family: 'Montserrat';">{{result}}</b>
+                      {% else %}
+                      <b style="color:red;;font-family: 'Montserrat';">{{result}}</b>
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+                    </p>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</div >
+        </section>
+<section class="colored-section" id="cta">
+  <div class="container-fluid" style="padding: 0% 29%">
+    <h3 class="big-heading" style="margin-top: 0px;padding-top: 20px;font-size: 2rem;">Hear sound all around.</h3>
+    <button type="button" class="btn btn-dark btn-lg download-button" onclick="window.open('https://apps.apple.com/us/app/apple-music/id1108187390','_blank')" style="font-size: 1.05rem;"><i class="fab fa-apple"></i> Download</button>
+    <button type="button" class="btn btn-outline-light btn-lg download-button" onclick=" window.open('https://play.google.com/store/apps/details?id=com.apple.android.music','_blank')" style="font-size: 1.05rem;"><i class="fab fa-google-play"></i> Download</button>
+  </div>
+</section>
+<footer class="white-section" id="footer">
+<div class="container-fluid" style="padding-top: 0px;padding-bottom: 0px;">
+  <i class="social-icon fab fa-facebook-f"></i>
+  <i class="social-icon fab fa-twitter"></i>
+  <i class="social-icon fab fa-instagram"></i>
+  <i class="social-icon fas fa-envelope"></i>
+  <p>Designed By Aayush</p>
+</div>
+</footer>
+</body>
+</div>
+</section>
+</html>

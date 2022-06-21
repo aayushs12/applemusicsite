@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- Last edited by Arun Banik @ https://encodedna.com -->
+<Library>
+  <List>
+    <code>1</code>
+    <AlbumName>Divide</AlbumName>
+    <Artist>Ed Sheeran</Artist>
+    <Streams>125.60 Million</Streams>
+</List>
+<List>
+    <code>2</code>
+    <AlbumName>Blonde</AlbumName>
+    <Artist>Frank Ocean</Artist>
+    <Streams>172.56 Million</Streams>
+</List>
+ <List>
+    <code>3</code>
+    <AlbumName>Tokyo</AlbumName>
+    <Artist>J.Cole</Artist>
+    <Streams>56 Million</Streams>
+ </List>
+</Library>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Features</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'applemusicsite2/css/styles.css' %}">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="icon" type=="image/x-icon" href="{% static 'applemusicsite2/images/favicon.ico' %}">
+  </head>
+  <body style="
+    background-color: #333333;
+    color: white;
+">
+    <section class="colored-section" id="title" style="height: 100px;
+      background-color: #333333;">
+
+      <div class="container-fluid">
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark" style="bottom: 25px;">
+
+          <a class="navbar-brand" href="{% url 'index' %}">Apple Music</a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'catalogue' %}">Catalogue</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cta">Download</a>
+              </li>
+            </ul>
+
+          </div>
+        </nav>
+        </section>
+        </div>
+        <section class="1">
+        <section class="parallax">
+            <div class="parallax-inner">
+                <br>
+                <h1 class="h1i">Exceptional</h1>
+                <br>
+            </div>
+        </section>
+    <h3 class="h3i">With Dolby Atmos support and Spatial Audio, Apple music provides an unparalled experience of the highest quality. </h3>
+    <div class="row">
+      <img src="{% static 'applemusicsite2/images/spatial.png' %}" alt="spatial audio" style="
+    padding-right: 80px;
+    height: 120px;
+    padding-left: 200px;
+" onmouseover="transform: scale(1.5);">
+
+      <img src="{% static 'applemusicsite2/images/dolby.png' %}" alt="dolby audio"
+      style="
+    padding-right: 0px;
+    height: 120px;
+    padding-left: 200px;
+">
+      <img src="{% static 'applemusicsite2/images/beats.png' %}" alt="beats audio"style="
+    padding-right: 0px;
+    height: 120px;
+    padding-left: 200px;
+">
+    </div>
+    <section class="parallax-1">
+        <div class="parallax-inner">
+            <br>
+            <h1 class="h1i">Diverse</h1>
+            <br>
+        </div>
+    </section>
+    </section>
+    <section style="height:400px">
+    <div class="bo" style="
+    height: 50px;">
+      <div class="content">
+        <div class="slider-wrapper">
+          Listen to
+          <div class="slider">
+              <div class="slider-text1">POP</div>
+              <div class="slider-text2">RAP</div>
+              <div class="slider-text3">ROCK</div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <h3 class="h3i" style="
+    margin-top: 0px; ">Apple Music offers more than 75 million songs in its massive library, as well as music videos and exclusives – to be honest, there isn’t much you won’t find here. Apple Music is geared towards helping you to discover new tracks and artists, whether that’s through recommendations, curated playlists or its 24/7 digital radio stations.</h3>
+</section>
+    <section class="parallax-2">
+        <div class="parallax-inner">
+            <br>
+            <h1  class="h1i">Unbeatable</h1>
+            <br>
+        </div>
+    </section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h3 class="animate-charcter"style=""> DISCOVER</h3>
+        </div>
+      </div>
+    </div>
+    <h3 class="h3i" style="font-size:1.95rem;">Apple Music does a fantastic job at helping you to discover new music. It has a great recommendation engine and a vast library. Recently added Lossless Audio listening and Dolby Atmos support mean it's happily keeping up with the competition.</h3>
+    </section>
+    <section class="colored-section" id="cta" style="
+      background-color: #333333;">
+      <div class="container-fluid" style="padding: 0% 29%">
+        <h3 class="big-heading" style="margin-top: 0px;padding-top: 20px;font-size: 2rem;">Hear sound all around.</h3>
+        <button type="button" class="btn btn-dark btn-lg download-button" onclick="window.open('https://apps.apple.com/us/app/apple-music/id1108187390','_blank')" style="font-size: 1.05rem;"><i class="fab fa-apple"></i> Download</button>
+        <button type="button" class="btn btn-outline-light btn-lg download-button" onclick=" window.open('https://play.google.com/store/apps/details?id=com.apple.android.music','_blank')" style="font-size: 1.05rem;"><i class="fab fa-google-play"></i> Download</button>
+      </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <body>
+    <p>Currently Trending:</p>
+    <div id="albums" style="margin: 5px 0px;"></div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        refresh_Div();
+    });
+
+    var i = 1;
+    function refresh_Div() {
+        $('#albums').empty();
+
+        $.ajax({
+            type: 'GET',
+            url: '{% static 'applemusicsite2/library.xml' %}',
+            dataType: 'xml',
+            success: function (xml) {
+
+                $(xml).find('List').each(function () {
+
+                    if ($(this).find('code').text() == i) {
+                        $('#albums').append(
+                        '<div>' +
+                            '<div><b>Album: </b>' +
+                                $(this).find('AlbumName').text() + '</div> ' +
+                            '<div><b>Artist: </b>' +
+                                $(this).find('Artist').text() + '</div> ' +
+                            '<div><b>Streams: </b>' +
+                                $(this).find('Streams').text() + '</div> ' +
+                        '</div>')
+                        .hide().fadeIn(2000);
+                    }
+                });
+
+                i = i + 1;
+                if (i > 3) i = 1;
+            }
+        });
+    }
+
+    var reloadXML = setInterval(refresh_Div, 5000);
+</script>
+    <footer class="white-section" id="footer">
+    <div class="container-fluid" style="padding-top: 30px;padding-bottom: 20px; color:black">
+      <i class="social-icon fab fa-facebook-f"></i>
+      <i class="social-icon fab fa-twitter"></i>
+      <i class="social-icon fab fa-instagram"></i>
+      <i class="social-icon fas fa-envelope"></i>
+      <p>Designed By Aayush</p>
+    </div>
+    </footer>
+    </body>
+    </html>
